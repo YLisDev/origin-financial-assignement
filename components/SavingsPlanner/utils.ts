@@ -14,7 +14,6 @@ export const formatInputData = (value: string) => {
     let [dollars, cents] = filteredValue.split('.');
 
     if (cents && cents.length > 2) cents = cents.substring(0, 2);
-    console.log('cents', cents, filteredValue);
 
     if (dollars.length > 3 && filteredValue[filteredValue.length - 1] !== '.') {
         const filteredDolars = dollars
@@ -60,8 +59,6 @@ export const calculateMonthlyAmmount = (
 ) => {
     const unformattedAmmount =
         parseFloat(ammount) / (dueDate.diff(moment(), 'month') + 1);
-
-    console.log(unformattedAmmount.toString());
 
     return formatInputData(unformattedAmmount.toString());
 };

@@ -42,8 +42,6 @@ const DateInput = () => {
         }
     };
 
-    console.log();
-
     return (
         <BorderContainer horizontalPadding={20}>
             <DateInputButton
