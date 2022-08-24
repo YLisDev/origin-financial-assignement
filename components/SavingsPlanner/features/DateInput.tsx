@@ -1,3 +1,4 @@
+import { theme } from '@styles/globalStyle';
 import moment from 'moment';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -44,12 +45,20 @@ const DateInput = () => {
     return (
         <BorderContainer horizontalPadding={20}>
             <DateInputButton
-                disabled={currentDate.diff(moment(), 'days') < 0}
+                disabled={currentDate.diff(moment(), 'day') <= 0}
                 onClick={() => {
                     handleClick('prev');
                 }}
             >
-                Prev month
+                <i
+                    style={{
+                        fontSize: '24px',
+                        color: '#8A9CA9',
+                    }}
+                    className="fas"
+                >
+                    &#xf104;
+                </i>
             </DateInputButton>
 
             <div>
@@ -64,7 +73,15 @@ const DateInput = () => {
                     handleClick('next');
                 }}
             >
-                Next month
+                <i
+                    style={{
+                        fontSize: '24px',
+                        color: '#8A9CA9',
+                    }}
+                    className="fas"
+                >
+                    &#xf105;
+                </i>
             </DateInputButton>
         </BorderContainer>
     );

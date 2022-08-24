@@ -4,6 +4,7 @@ import Conclusion from './features/Conclusion';
 import ConfirmButton from './features/ConfirmButton';
 import DateInput from './features/DateInput';
 import MonthlyAmmount from './features/MonthlyAmmount';
+import { ReactComponent as House } from '@img/house.svg';
 import {
     BorderContainer,
     Conatiner,
@@ -17,16 +18,6 @@ import {
     ResultsContainer,
 } from './UI';
 
-const H2 = styled.h2`
-    color: green;
-
-    margin-bottom: 5px;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 120%;
-`;
-
 const SavingsPlanner = () => {
     return (
         <Conatiner>
@@ -35,8 +26,10 @@ const SavingsPlanner = () => {
             </EncouragingCaption>
 
             <Header>
-                <HeaderIconWrapper></HeaderIconWrapper>
-                <div>
+                <HeaderIconWrapper>
+                    <House />
+                </HeaderIconWrapper>
+                <div style={{ paddingLeft: '16px' }}>
                     <h2>Buy a house</h2>
                     <HeaderCaption>Saving goal</HeaderCaption>
                 </div>

@@ -148,6 +148,8 @@ export const MonthName = styled.h3<{ theme: typeof theme }>`
 
 export const DateInputButton = styled.button<{ theme: typeof theme }>`
     display: block;
+    padding: 0;
+
     outline: none;
     border: none;
     background-color: transparent;
@@ -217,7 +219,7 @@ export const Button = styled.button<{ theme: typeof theme }>`
     width: 320px;
     height: 56px;
 
-    margin: 8px auto 0;
+    margin: 32px auto 0;
 
     border: none;
     border-radius: 32px;
