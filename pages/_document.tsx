@@ -50,10 +50,6 @@ export default class MyDocument extends NextDocument<DocumentProps> {
                         href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&family=Work+Sans:wght@200;300;400;500&display=swap"
                         rel="stylesheet"
                     />
-                    <script
-                        src="https://kit.fontawesome.com/a076d05399.js"
-                        crossOrigin="anonymous"
-                    ></script>
                 </Head>
                 <body>
                     <Main />

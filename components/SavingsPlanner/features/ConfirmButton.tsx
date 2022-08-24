@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Button } from '../UI';
 
 const ConfirmButton = () => {

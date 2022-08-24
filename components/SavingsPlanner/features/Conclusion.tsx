@@ -6,7 +6,7 @@ import { calculateMonthlyAmmount, getInitialQuery } from '../utils';
 
 const Conclusion = () => {
     const router = useRouter();
-    const [amount, setAmount] = useState('0');
+    const [amount, setAmount] = useState('');
     const [dueDate, setDueDate] = useState(moment());
     const depositsCount = dueDate.diff(moment(), 'month') + 1;
 
@@ -21,8 +21,8 @@ const Conclusion = () => {
             const ammount = initialAmmount.split('%2C').join('') as string;
             const date = moment(initialDate);
 
-            setAmount(ammount);
-            setDueDate(date);
+            if (amount) setAmount(ammount);
+            if (date) setDueDate(date);
         }
     }, []);
 
@@ -39,7 +39,7 @@ const Conclusion = () => {
             <b>
                 {depositsCount} monthly deposit{depositsCount > 1 ? 's' : ''}
             </b>{' '}
-            to reach your <b>${amount} goal</b> by{' '}
+            to reach your <b>${amount ? amount : 0} goal</b> by{' '}
             <b>{dueDate.format('MMMM YYYY')}</b>
         </UI>
     );

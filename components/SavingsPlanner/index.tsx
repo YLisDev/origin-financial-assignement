@@ -5,6 +5,7 @@ import ConfirmButton from './features/ConfirmButton';
 import DateInput from './features/DateInput';
 import MonthlyAmmount from './features/MonthlyAmmount';
 import { ReactComponent as House } from '@img/house.svg';
+import { ReactComponent as DollarSign } from '@img/dollar-sign.svg';
 import {
     BorderContainer,
     Conatiner,
@@ -39,7 +40,9 @@ const SavingsPlanner = () => {
                 <div>
                     <InputLabel htmlFor="ammount">Total amount</InputLabel>
                     <BorderContainer horizontalPadding={17}>
-                        <div>dsds</div>
+                        <div style={{ paddingTop: '3px' }}>
+                            <DollarSign />
+                        </div>
                         <AmountInput />
                     </BorderContainer>
                 </div>

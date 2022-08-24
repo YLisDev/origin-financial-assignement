@@ -34,11 +34,15 @@ const MonthlyAmmount = () => {
             const date = moment(dueDate);
 
             const monthlyAmmount = calculateMonthlyAmmount(ammount, date);
-	    
+
             setMonthlyAmmount(monthlyAmmount);
         }
     }, [amount, dueDate]);
-    return <MonthlyAmmountValue>${monthlyAmmount}</MonthlyAmmountValue>;
+    return (
+        <MonthlyAmmountValue>
+            ${monthlyAmmount ? monthlyAmmount : 0}
+        </MonthlyAmmountValue>
+    );
 };
 
 export default MonthlyAmmount;

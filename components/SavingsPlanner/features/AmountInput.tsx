@@ -29,7 +29,15 @@ const AmountInput = () => {
         router.push(router, undefined, { shallow: true });
     };
 
-    return <UI value={ammount} onChange={handleChange} />;
+    return (
+        <UI
+            value={ammount}
+            onChange={handleChange}
+            onClick={() => {
+                ammount === '0' && setAmmount('');
+            }}
+        />
+    );
 };
 
 export default AmountInput;

@@ -1,7 +1,7 @@
 import { theme } from '@styles/globalStyle';
 import moment from 'moment';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import {
     BorderContainer,
     DateInputButton,
@@ -9,6 +9,8 @@ import {
     MonthName,
 } from '../UI';
 import { getInitialQuery } from '../utils';
+import { ReactComponent as Next } from '@img/next-pointer.svg';
+import { ReactComponent as Prev } from '@img/prev-pointer.svg';
 
 const DateInput = () => {
     const [currentDate, setCurrentDate] = useState(moment());
@@ -50,15 +52,7 @@ const DateInput = () => {
                     handleClick('prev');
                 }}
             >
-                <i
-                    style={{
-                        fontSize: '24px',
-                        color: '#8A9CA9',
-                    }}
-                    className="fas"
-                >
-                    &#xf104;
-                </i>
+                <Prev />
             </DateInputButton>
 
             <div>
@@ -73,15 +67,7 @@ const DateInput = () => {
                     handleClick('next');
                 }}
             >
-                <i
-                    style={{
-                        fontSize: '24px',
-                        color: '#8A9CA9',
-                    }}
-                    className="fas"
-                >
-                    &#xf105;
-                </i>
+                <Next />
             </DateInputButton>
         </BorderContainer>
     );
