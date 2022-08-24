@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import AmountInput from './features/AmountInput';
+import Conclusion from './features/Conclusion';
+import ConfirmButton from './features/ConfirmButton';
+import DateInput from './features/DateInput';
+import MonthlyAmmount from './features/MonthlyAmmount';
 import {
-    AmountInput,
     BorderContainer,
-    Button,
     Conatiner,
-    Conclusion,
     EncouragingCaption,
     Header,
     HeaderCaption,
@@ -12,7 +14,6 @@ import {
     InputLabel,
     InputsContainer,
     MonthlyAmmountCaption,
-    MonthlyAmmountValue,
     ResultsContainer,
 } from './UI';
 
@@ -30,7 +31,7 @@ const SavingsPlanner = () => {
     return (
         <Conatiner>
             <EncouragingCaption>
-                Let's plan your <b>saving goal</b>
+                Let&apos;s plan your <b>saving goal</b>
             </EncouragingCaption>
 
             <Header>
@@ -46,30 +47,27 @@ const SavingsPlanner = () => {
                     <InputLabel htmlFor="ammount">Total amount</InputLabel>
                     <BorderContainer horizontalPadding={17}>
                         <div>dsds</div>
-                        <AmountInput id="ammount" type="text" />
+                        <AmountInput />
                     </BorderContainer>
                 </div>
                 <div>
                     <InputLabel htmlFor="date">Reach goal by</InputLabel>
 
-                    <BorderContainer>
-                        <AmountInput id="date" type="date" />
-                    </BorderContainer>
+                    <DateInput />
                 </div>
             </InputsContainer>
 
             <BorderContainer increaseBorderRadius flexDirection="column">
                 <ResultsContainer>
-                    <MonthlyAmmountCaption>Monthly amount</MonthlyAmmountCaption>
-                    <MonthlyAmmountValue>$500.83</MonthlyAmmountValue>
+                    <MonthlyAmmountCaption>
+                        Monthly amount
+                    </MonthlyAmmountCaption>
+                    <MonthlyAmmount />
                 </ResultsContainer>
-                <Conclusion>
-                    You're planning <b>38 monthly deposits</b> to reach your <b>$25,00 goal</b> by{' '}
-                    <b>October 2020</b>
-                </Conclusion>
+                <Conclusion />
             </BorderContainer>
 
-            <Button>Confirm</Button>
+            <ConfirmButton />
         </Conatiner>
     );
 };
