@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 export const Conatiner = styled.div<{ theme: typeof theme }>`
     padding: 35px 40px;
+    margin: 48px 0;
     width: ${({ theme }) => theme.breakPoints.mobile};
     position: relative;
 
@@ -10,15 +11,29 @@ export const Conatiner = styled.div<{ theme: typeof theme }>`
     border-radius: 8px;
     background-color: ${({ theme }) => theme.colors.background.white};
 
-    overflow: hidden;
-
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
         padding: 31px 24px;
         width: 100%;
     }
 `;
 
+export const EncouragingCaption = styled.div`
+    position: absolute;
+    top: -48px;
+    left: 0;
+    height: 24px;
+    width: 100%;
+
+    text-align: center;
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+    font-weight: 400;
+    color: ${({ theme }) => theme.colors.accent.dark};
+    font-family: ${({ theme }) => theme.fonts.other};
+`;
+
 export const Header = styled.header`
+    margin-bottom: 20px;
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -33,7 +48,6 @@ export const HeaderCaption = styled.span<{ theme: typeof theme }>`
     font-family: ${({ theme }) => theme.fonts.other};
     font-weight: 300;
     font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
-    line-height: 24px;
     color: ${({ theme }) => theme.colors.text.caption};
 `;
 
@@ -101,6 +115,10 @@ export const AmountInput = styled.input<{ theme: typeof theme }>`
     font-size: ${({ theme }) => theme.fontSizes.large};
     line-height: 28px;
     color: ${({ theme }) => theme.colors.text.input};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.mediumLarge};
+    }
 `;
 
 export const ResultsContainer = styled.div<{ theme: typeof theme }>`
@@ -121,16 +139,24 @@ export const MonthlyAmmountCaption = styled.span<{ theme: typeof theme }>`
     font-size: ${({ theme }) => theme.fontSizes.large};
     line-height: 24px;
     color: ${({ theme }) => theme.colors.text.default};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
+    }
 `;
 
 export const MonthlyAmmountValue = styled.span<{ theme: typeof theme }>`
     display: block;
 
     font-family: ${({ theme }) => theme.fonts.headers};
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSizes.large};
+    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSizes.extraLarge};
     line-height: 24px;
     color: ${({ theme }) => theme.colors.accent.light};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.mediumLarge};
+    }
 `;
 
 export const Conclusion = styled.p<{ theme: typeof theme }>`
@@ -146,7 +172,6 @@ export const Conclusion = styled.p<{ theme: typeof theme }>`
     font-family: ${({ theme }) => theme.fonts.other};
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSizes.extraSmall};
-    line-height: 24px;
     color: ${({ theme }) => theme.colors.text.default};
 `;
 

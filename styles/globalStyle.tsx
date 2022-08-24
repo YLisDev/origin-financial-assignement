@@ -17,6 +17,7 @@ export const theme = {
         medium: '18px',
         mediumLarge: '20px',
         large: '24px',
+        extraLarge: '32px',
     },
     heights: {
         header: { desktop: '80px', mobile: '56px' },

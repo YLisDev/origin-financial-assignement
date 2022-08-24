@@ -5,6 +5,7 @@ import {
     Button,
     Conatiner,
     Conclusion,
+    EncouragingCaption,
     Header,
     HeaderCaption,
     HeaderIconWrapper,
@@ -28,6 +29,10 @@ const H2 = styled.h2`
 const SavingsPlanner = () => {
     return (
         <Conatiner>
+            <EncouragingCaption>
+                Let's plan your <b>saving goal</b>
+            </EncouragingCaption>
+
             <Header>
                 <HeaderIconWrapper></HeaderIconWrapper>
                 <div>
@@ -58,7 +63,10 @@ const SavingsPlanner = () => {
                     <MonthlyAmmountCaption>Monthly amount</MonthlyAmmountCaption>
                     <MonthlyAmmountValue>$500.83</MonthlyAmmountValue>
                 </ResultsContainer>
-                <Conclusion>Conclusion xdc fs sddsdv sdv sdvsdvsdvsdvvsd vsdvsdvsdvsdv</Conclusion>
+                <Conclusion>
+                    You're planning <b>38 monthly deposits</b> to reach your <b>$25,00 goal</b> by{' '}
+                    <b>October 2020</b>
+                </Conclusion>
             </BorderContainer>
 
             <Button>Confirm</Button>
