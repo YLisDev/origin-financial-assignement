@@ -44,11 +44,21 @@ export const HeaderIconWrapper = styled.div`
     height: 64px;
 `;
 
-export const HeaderCaption = styled.span<{ theme: typeof theme }>`
+export const HeaderCaption = styled.span<{
+    theme: typeof theme;
+    centredText?: boolean;
+}>`
+    display: block;
+
+    text-align: ${({ centredText }) => (centredText ? 'center' : 'left')};
     font-family: ${({ theme }) => theme.fonts.other};
     font-weight: 300;
     font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
     color: ${({ theme }) => theme.colors.text.caption};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+    }
 `;
 
 export const BorderContainer = styled.div<{
@@ -60,13 +70,15 @@ export const BorderContainer = styled.div<{
     margin-bottom: 24px;
     padding: ${({ verticalPadding = 0 }) => verticalPadding}px
         ${({ horizontalPadding = 0 }) => horizontalPadding}px;
+    min-height: 56px;
 
     display: flex;
     flex-direction: ${({ flexDirection = 'row' }) => flexDirection};
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    border-radius: ${({ increaseBorderRadius = false }) => (increaseBorderRadius ? '8px' : '4px')};
+    border-radius: ${({ increaseBorderRadius = false }) =>
+        increaseBorderRadius ? '8px' : '4px'};
     border: 1px solid #e9eef2;
 
     overflow: hidden;
@@ -88,7 +100,7 @@ export const InputsContainer = styled.div<{ theme: typeof theme }>`
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
-        & > div {
+        & > div:is(:last-child, :first-child) {
             width: 100%;
             margin-right: 0;
         }
@@ -110,14 +122,40 @@ export const AmountInput = styled.input<{ theme: typeof theme }>`
     border: none;
     outline: none;
 
-    font-family: ${({ theme }) => theme.fonts.header};
+    font-family: ${({ theme }) => theme.fonts.headers};
     font-weight: 500;
     font-size: ${({ theme }) => theme.fontSizes.large};
     line-height: 28px;
     color: ${({ theme }) => theme.colors.text.input};
 
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
-        font-size: ${({ theme }) => theme.fontSizes.mediumLarge};
+        font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
+    }
+`;
+
+export const MonthName = styled.h3<{ theme: typeof theme }>`
+    margin: 0;
+
+    font-family: ${({ theme }) => theme.fonts.header};
+    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
+    font-family: ${({ theme }) => theme.fonts.headers};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+    }
+`;
+
+export const DateInputButton = styled.button<{ theme: typeof theme }>`
+    display: block;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:disabled,
+    &[disabled] {
+        opacity: 0.5;
     }
 `;
 
