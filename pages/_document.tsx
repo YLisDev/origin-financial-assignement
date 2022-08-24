@@ -36,27 +36,15 @@ export default class MyDocument extends NextDocument<DocumentProps> {
             <Html>
                 <Head>
                     {this.props.styleTags}
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link
-                        rel="preload"
-                        href="/fonts/Theinhardt-Regular.woff2"
-                        as="font"
-                        type="font/woff2"
-                        crossOrigin={'*'}
+                        rel="preconnect"
+                        href="https://fonts.gstatic.com"
+                        crossOrigin="anonymous"
                     />
                     <link
-                        rel="preload"
-                        href="/fonts/Theinhardt-Medium.woff2"
-                        as="font"
-                        type="font/woff2"
-                        crossOrigin={'*'}
-                    />
-                    <meta name="msapplication-TileColor" content="#da532c" />
-                    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-                    <meta name="theme-color" content="#ffffff" />
-                    <script
-                        defer
-                        data-domain="bezerocarbon.com"
-                        src="https://plausible.io/js/plausible.js"
+                        href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&family=Work+Sans:wght@200;300;400;500&display=swap"
+                        rel="stylesheet"
                     />
                 </Head>
                 <body>

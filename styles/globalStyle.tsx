@@ -1,28 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    box-sizing: border-box;
-  }
-
-  html, body, #__next {
-    padding: 0;
-    margin: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`;
-
 export const theme = {
     colors: {
-        background: { gray: '#fafafa', white: '#fff' },
+        background: { gray: '#f4f8fa', white: '#fff' },
         accent: { dark: '#1B31A8', light: '#0079FF' },
+        text: { header: '#1E2A32', default: '#1C1E1F', caption: '#708797', input: '#4D6475' },
     },
     fonts: {
-        headers: ['sans-serif', 'Rubik'],
-        other: ['sans-serif', 'Work Sans'],
+        headers: 'Rubik, sans-serif',
+        other: '"Work Sans", sans-serif',
     },
     fontSizes: {
         extraSmall: '12px',
@@ -40,4 +26,25 @@ export const theme = {
     },
 };
 
+const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+
+  html, body, #__next {
+    padding: 0;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-family: ${theme.fonts.headers};
+    font-size: ${theme.fontSizes.large};
+
+    margin: 0 0 4px;
+  }
+`;
 export default GlobalStyle;
