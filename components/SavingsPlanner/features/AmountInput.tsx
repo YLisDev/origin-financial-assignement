@@ -17,15 +17,10 @@ const AmountInput = () => {
 
     const handleChange = (e: SyntheticEvent<HTMLInputElement>) => {
         const value = e.currentTarget.value;
-        const formattedValue =
-            value.slice(-1) === '.' ? value : formatInputData(value);
+        if (value.slice(-1) === '.') return;
+        const formattedValue = formatInputData(value);
         setAmmount(formattedValue);
-        router.query.amount =
-            formattedValue.length > 0
-                ? value.slice(-1) === '.'
-                    ? value.slice(0, -1)
-                    : formattedValue
-                : '0';
+        router.query.amount = formattedValue.length > 0 ? formattedValue : '0';
         router.push(router, undefined, { shallow: true });
     };
 
