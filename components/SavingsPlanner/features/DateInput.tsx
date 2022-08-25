@@ -1,7 +1,7 @@
 import { theme } from '@styles/globalStyle';
 import moment from 'moment';
 import { useRouter } from 'next/router';
-import { FC, useEffect, useState } from 'react';
+import { KeyboardEvent, useEffect, useState } from 'react';
 import {
     BorderContainer,
     DateInputButton,
@@ -14,6 +14,9 @@ import { ReactComponent as Prev } from '@img/prev-pointer.svg';
 
 const DateInput = () => {
     const [currentDate, setCurrentDate] = useState(moment());
+    const [focus, setFocus] = useState(false);
+    console.log(focus);
+
     const router = useRouter();
 
     const NEXT_MONTH = moment(currentDate).add(1, 'month');
@@ -26,6 +29,20 @@ const DateInput = () => {
             setCurrentDate(moment(initialDate));
         }
     }, []);
+
+    const handleKeyUp = ({ key }: KeyboardEvent<HTMLDivElement>) => {
+        console.log('working');
+        if (!focus) return;
+
+        switch (key) {
+            case 'ArrowLeft':
+                handleClick('prev');
+                break;
+            case 'ArrowRight':
+                handleClick('next');
+                break;
+        }
+    };
 
     const handleClick = (direction: 'next' | 'prev') => {
         if (direction === 'next') {
@@ -43,7 +60,13 @@ const DateInput = () => {
     };
 
     return (
-        <BorderContainer id="date" horizontalPadding={20}>
+        <BorderContainer
+            id="date"
+            horizontalPadding={20}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            onKeyDown={(e) => handleKeyUp(e)}
+        >
             <DateInputButton
                 disabled={currentDate.diff(moment(), 'day') <= 0}
                 onClick={() => {

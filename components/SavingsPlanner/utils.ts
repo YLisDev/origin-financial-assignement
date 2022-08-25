@@ -55,6 +55,7 @@ export const getInitialQuery = (
     return result;
 };
 
+
 export const calculateMonthlyAmmount = (
     ammount: string,
     dueDate: moment.Moment,
