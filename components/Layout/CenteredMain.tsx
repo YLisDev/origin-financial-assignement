@@ -18,5 +18,6 @@ export default styled.main<CenteredMainProps>`
 
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
         min-height: calc(100vh - ${({ theme }) => theme.heights.header.mobile});
+        margin-top: ${({ theme }) => theme.heights.header.mobile};
     }
 `;

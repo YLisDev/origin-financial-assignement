@@ -17,7 +17,8 @@ const AmountInput = () => {
 
     const handleChange = (e: SyntheticEvent<HTMLInputElement>) => {
         const value = e.currentTarget.value;
-        if (value.slice(-1) === '.') return;
+        
+        if (value.slice(-1) === '.') setAmmount(value);;
         const formattedValue = formatInputData(value);
         setAmmount(formattedValue);
         router.query.amount = formattedValue.length > 0 ? formattedValue : '0';

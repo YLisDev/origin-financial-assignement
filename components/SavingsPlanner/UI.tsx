@@ -29,14 +29,25 @@ export const EncouragingCaption = styled.div`
     font-weight: 400;
     color: ${({ theme }) => theme.colors.accent.dark};
     font-family: ${({ theme }) => theme.fonts.other};
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        font-size: ${({ theme }) => theme.fontSizes.mediumSmall};
+
+    }
 `;
 
-export const Header = styled.header`
+export const Header = styled.header<{ theme: typeof theme }>`
     margin-bottom: 20px;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        h2 {
+            font-size: ${({ theme }) => theme.fontSizes.mediumLarge};
+        }
+    }
 `;
 
 export const HeaderIconWrapper = styled.div`
@@ -100,6 +111,13 @@ export const InputsContainer = styled.div<{ theme: typeof theme }>`
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        & > div:first-child {
+            margin-bottom: 16px;
+
+            & > div {
+                margin-bottom: 0px;
+            }
+        }
         & > div:is(:last-child, :first-child) {
             width: 100%;
             margin-right: 0;
@@ -117,7 +135,7 @@ export const InputLabel = styled.label<{ theme: typeof theme }>`
 
 export const DollarSignContainer = styled.div<{ theme: typeof theme }>`
     padding-top: 3px;
-    
+
     & svg {
         width: 24px;
         height: 24px;
@@ -183,6 +201,10 @@ export const ResultsContainer = styled.div<{ theme: typeof theme }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+        padding: 24px 27px;
+    }
 `;
 
 export const MonthlyAmmountCaption = styled.span<{ theme: typeof theme }>`

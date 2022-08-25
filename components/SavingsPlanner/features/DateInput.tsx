@@ -15,7 +15,6 @@ import { ReactComponent as Prev } from '@img/prev-pointer.svg';
 const DateInput = () => {
     const [currentDate, setCurrentDate] = useState(moment());
     const [focus, setFocus] = useState(false);
-    console.log(focus);
 
     const router = useRouter();
 
@@ -31,7 +30,6 @@ const DateInput = () => {
     }, []);
 
     const handleKeyUp = ({ key }: KeyboardEvent<HTMLDivElement>) => {
-        console.log('working');
         if (!focus) return;
 
         switch (key) {
