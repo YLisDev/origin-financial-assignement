@@ -9,6 +9,7 @@ import { ReactComponent as DollarSign } from '@img/dollar-sign.svg';
 import {
     BorderContainer,
     Conatiner,
+    DollarSignContainer,
     EncouragingCaption,
     Header,
     HeaderCaption,
@@ -40,9 +41,9 @@ const SavingsPlanner = () => {
                 <div>
                     <InputLabel htmlFor="ammount">Total amount</InputLabel>
                     <BorderContainer horizontalPadding={17}>
-                        <div style={{ paddingTop: '3px' }}>
+                        <DollarSignContainer>
                             <DollarSign />
-                        </div>
+                        </DollarSignContainer>
                         <AmountInput />
                     </BorderContainer>
                 </div>

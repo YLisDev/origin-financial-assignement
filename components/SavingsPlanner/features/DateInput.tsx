@@ -43,7 +43,7 @@ const DateInput = () => {
     };
 
     return (
-        <BorderContainer horizontalPadding={20}>
+        <BorderContainer id="date" horizontalPadding={20}>
             <DateInputButton
                 disabled={currentDate.diff(moment(), 'day') <= 0}
                 onClick={() => {

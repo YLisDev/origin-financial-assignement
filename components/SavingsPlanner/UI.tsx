@@ -115,6 +115,20 @@ export const InputLabel = styled.label<{ theme: typeof theme }>`
     color: ${({ theme }) => theme.colors.text.header};
 `;
 
+export const DollarSignContainer = styled.div<{ theme: typeof theme }>`
+    padding-top: 3px;
+    
+    & svg {
+        width: 24px;
+        height: 24px;
+
+        @media (max-width: ${({ theme }) => theme.breakPoints.mobile}) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+`;
+
 export const AmountInput = styled.input<{ theme: typeof theme }>`
     width: 100%;
     height: 56px;
