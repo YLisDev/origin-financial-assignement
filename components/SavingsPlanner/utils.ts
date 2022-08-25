@@ -11,7 +11,9 @@ export const formatInputData = (value: string) => {
 
     if (filteredValue[0] === '0') return '';
 
-    let [dollars, cents] = filteredValue.split('.');
+    let splitValue = filteredValue.split('.');
+    let dollars = splitValue[0];
+    let cents = splitValue[splitValue.length - 1];
 
     if (cents && cents.length > 2) cents = cents.substring(0, 2);
 
