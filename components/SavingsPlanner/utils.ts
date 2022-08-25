@@ -13,7 +13,11 @@ export const formatInputData = (value: string) => {
 
     let splitValue = filteredValue.split('.');
     let dollars = splitValue[0];
-    let cents = splitValue[splitValue.length - 1];
+    let cents = null;
+
+    if (splitValue.length > 1) {
+        cents = splitValue[splitValue.length - 1];
+    }
 
     if (cents && cents.length > 2) cents = cents.substring(0, 2);
 
@@ -54,7 +58,6 @@ export const getInitialQuery = (
 
     return result;
 };
-
 
 export const calculateMonthlyAmmount = (
     ammount: string,
